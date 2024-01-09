@@ -2,16 +2,28 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>ResidentialLoanApplication.Total_Property_Encumbrance__c</members>
+        <members>ResidentialLoanApplication.Max_Loan_Amount__c</members>
         <members>ResidentialLoanApplication.Total_Property_Tax__c</members>
-        <members>CJA_Mortgage__Mortgage__c.Source_Mortgage_ID__c</members>
         <members>ResidentialLoanApplication.Net_Transfer_Amount__c</members>
-
-
+        <members>ResidentialLoanApplication.Total_Fees_excl_Fund_Fees__c</members>
+        <members>ResidentialLoanApplication.All_Parties_Fees__c</members>
+        <members>ResidentialLoanApplication.Show_Broker_Invoice__c</members>
+        <members>ResidentialLoanApplication.Anticipated_IAD__c</members>
+        <members>ResidentialLoanApplication.Diff_closingdate_interestadjustmentdate__c</members>
+        <members>ResidentialLoanApplication.Interest_Adjustment_Date__c</members>
+        <members>ResidentialLoanApplication.Next_Payment_Date__c</members>
+        <members>ResidentialLoanApplication.Closing_Date__c</members>
+        <members>ResidentialLoanApplication.Total_Housing_Costs__c</members>
+        <members>ResidentialLoanApplication.GDS__c</members>
+        <members>ResidentialLoanApplication.TDS_offset_rental__c</members>
+        <members>ResidentialLoanApplication.TDS_rental_as_income__c</members>
         <name>CustomField</name>
     </types>
     <types>
         <members>Conditions_AutoLaunched_Sys_Logic_Assessment</members>
         <members>Conditions_Trigger_Mortgage_Sys_Logic_Reassessment</members>
+        <members>Loan_Applicants_Actions</members>
+        <members>Create_Compliance_Records</members>
 
         <name>Flow</name>
     </types>
