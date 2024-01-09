@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+
+        <members>ComplianceRecord__mdt.Question__c</members>
+		<members>ComplianceRecord__mdt.RecType__c</members>
+		<members>ComplianceRecord__mdt.Type__c</members>
+		<members>Compliance_Notifications__mdt.Form_Type__c</members>
+		<members>Compliance_Notifications__mdt.RecipientEmail__c</members>
+		<members>Compliance__c.Answer__c</members>
+		<members>Compliance__c.Applicant_Name__c</members>
+		<members>Compliance__c.Applicant_Type__c</members>
+		<members>Compliance__c.Applicant__c</members>
+		<members>Compliance__c.CR_Rating__c</members>
+		<members>Compliance__c.Comment__c</members>
+		<members>Compliance__c.If_yes__c</members>
+		<members>Compliance__c.Is_High_Risk__c</members>
+		<members>Compliance__c.Lending_Application__c</members>
+		<members>Compliance__c.Question__c</members>
+		<members>Compliance__c.Rating__c</members>
+		<members>Compliance__c.Record_type_name__c</members>
+		<members>Compliance__c.Type__c</members>
+		<members>LoanApplicant.Applicant_Is_Suspicious__c</members>
+		<members>LoanApplicant.Applicant_Risk_Points__c</members>
+		<members>LoanApplicant.Applicant_Suspiciousness__c</members>
+		<members>LoanApplicant.Full_Name__c</members>
+		<members>LoanApplicant.IsGSA__c</members>
+		<members>LoanApplicant.IsGuarantee__c</members>
+		<members>LoanApplicant.RIsk_Rating3__c</members>
+		<members>LoanApplicant.RIsk_Rating__c</members>
+		<members>ResidentialLoanApplication.Approved_Notification_Sent__c</members>
+		<members>ResidentialLoanApplication.CJA_Mortgage__Notes__c</members>
+		<members>ResidentialLoanApplication.EDD_Notification_Sent__c</members>
+		<members>ResidentialLoanApplication.EDD_notes__c</members>
+		<members>ResidentialLoanApplication.Has_the_Client_Risk_Assessment_Complete__c</members>
+		<members>ResidentialLoanApplication.Has_the_Transaction_Checklist_Completed__c</members>
+		<members>ResidentialLoanApplication.Is_Approved__c</members>
+		<members>ResidentialLoanApplication.Is_EDD_Completed__c</members>
+		<members>ResidentialLoanApplication.Is_UTR_Complete__c</members>
+		<members>ResidentialLoanApplication.Overall_RIsk_Rating2__c</members>
+		<members>ResidentialLoanApplication.Overall_RIsk_Rating__c</members>
+		<members>ResidentialLoanApplication.Overall_Risk_Text__c</members>
+		<members>ResidentialLoanApplication.Overall_Suspiciousness_Text__c</members>
+		<members>ResidentialLoanApplication.Overall_Suspiciousness__c</members>
+		<members>ResidentialLoanApplication.Override_Authorized_By__c</members>
+		<members>ResidentialLoanApplication.Override_Risk_Rating__c</members>
+		<members>ResidentialLoanApplication.Rationale_For_Override__c</members>
+		<members>ResidentialLoanApplication.Review_Date__c</members>
+		<members>ResidentialLoanApplication.Reviewer__c</members>
+		<members>ResidentialLoanApplication.Risk_Rating_Indicator__c</members>
         <members>ResidentialLoanApplication.Total_Property_Encumbrance__c</members>
         <members>ResidentialLoanApplication.Max_Loan_Amount__c</members>
         <members>ResidentialLoanApplication.Total_Property_Tax__c</members>
@@ -20,6 +67,55 @@
         <name>CustomField</name>
     </types>
     <types>
+		<members>ComplianceRecord.CRA_001</members>
+		<members>ComplianceRecord.CRA_002</members>
+		<members>ComplianceRecord.CRA_003</members>
+		<members>ComplianceRecord.CRA_004</members>
+		<members>ComplianceRecord.CRA_005</members>
+		<members>ComplianceRecord.CRA_006</members>
+		<members>ComplianceRecord.CRA_007</members>
+		<members>ComplianceRecord.CRA_008</members>
+		<members>ComplianceRecord.TC_001</members>
+		<members>ComplianceRecord.TC_002</members>
+		<members>ComplianceRecord.TC_003</members>
+		<members>ComplianceRecord.TC_004</members>
+		<members>ComplianceRecord.TC_005</members>
+		<members>ComplianceRecord.TC_006</members>
+		<members>ComplianceRecord.TC_007</members>
+		<members>ComplianceRecord.TC_008</members>
+		<members>ComplianceRecord.TC_009</members>
+		<members>ComplianceRecord.TC_010</members>
+		<members>Compliance_Notifications.EDD_01</members>
+		<members>Compliance_Notifications.UTR_01</members>
+		<name>CustomMetadata</name>
+	</types>
+	<types>
+		<members>Compliance_Notification</members>
+		<name>CustomNotificationType</name>
+	</types>
+	<types>
+		<members>ComplianceRecord__mdt</members>
+		<members>Compliance_Notifications__mdt</members>
+		<members>Compliance__c</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>Country_Risk_Assessment</members>
+		<members>Decision_Matrix_Domestic_Geographic_Risk_Ratings_State</members>
+		<members>Domestic_Geographic_Risk_Ratings</members>
+		<members>Occupation_Industries_and_their_Risk_Ratings</members>
+		<members>Set_the_Risk_Rating</members>
+		<name>DecisionMatrixDefinition</name>
+	</types>
+	<types>
+		<members>Country_Risk_Assessment_V1</members>
+		<members>Decision_Matrix_Domestic_Geographic_Risk_Ratings_State_V1</members>
+		<members>Domestic_Geographic_Risk_Ratings_V1</members>
+		<members>Occupation_Industries_and_their_Risk_Ratings_V1</members>
+		<members>Set_the_Risk_Rating_V1</members>
+		<name>DecisionMatrixDefinitionVersion</name>
+	</types>
+    <types>
         <members>Conditions_AutoLaunched_Sys_Logic_Assessment</members>
         <members>Conditions_Trigger_Mortgage_Sys_Logic_Reassessment</members>
         <members>Loan_Applicants_Actions</members>
@@ -27,6 +123,9 @@
 
         <members>Create_Compliance_Records</members>
 
+        <members>Client_Risk_Assessment_Flow</members>
+		<members>Contact_Update_Actions</members>
+		<members>On_Compliance_Update</members>
         <name>Flow</name>
     </types>
     <types>
@@ -34,5 +133,52 @@
         <members>DeepCloneRLA_Test</members>
         <name>ApexClass</name>
     </types>
+    <types>
+		<members>ComplianceRecord__mdt-Compliance Record Layout</members>
+		<members>Compliance_Notifications__mdt-Compliance Notification Layout</members>
+		<members>Compliance__c-CRA Page Layout</members>
+		<members>Compliance__c-Compliance Layout</members>
+		<members>Compliance__c-TC Page Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
+		<members>Compliance__c.All</members>
+		<members>Compliance__c.All_Client_Risk_Assessment</members>
+		<members>Compliance__c.All_Transaction_Checklist</members>
+		<name>ListView</name>
+	</types>
+	<types>
+		<members>Compliance_Fields_Access</members>
+		<name>PermissionSet</name>
+	</types>
+	<types>
+		<members>Compliance__c.Client_Risk_Assessment</members>
+		<members>Compliance__c.Transaction_checklist</members>
+		<name>RecordType</name>
+	</types>
+	<types>
+		<members>SiteSamples</members>
+        <members>SNA_Customers1_sf_default_cdn_3KDsK</members>
+		<name>StaticResource</name>
+	</types>
+	<types>
+		<members>Account.age_cannot_be_less_than_18</members>
+		<members>Account.other_occupation_cannot_be_empty</members>
+		<members>Compliance__c.Client_Characteristics_Error</members>
+		<members>Compliance__c.Fill_out_the_rating</members>
+		<members>Compliance__c.fill_the_Answer</members>
+		<members>Contact.FinServ__BirthdateCannotBeInFuture</members>
+		<members>Contact.age_cannot_be_lessThan_18</members>
+		<members>Contact.other_occupation_cannot_be_empty</members>
+		<members>ResidentialLoanApplication.Cannot_move_to_approve_from_underwriting</members>
+		<members>ResidentialLoanApplication.Complete_Compliance_Before_Override</members>
+		<members>ResidentialLoanApplication.Complete_the_Compliance_before_advancing</members>
+		<members>ResidentialLoanApplication.Fill_all_Compliance_Override_Fields</members>
+		<members>ResidentialLoanApplication.Fill_in_EDD_before_Closing</members>
+		<members>ResidentialLoanApplication.Fill_in_UTR_before_Closing</members>
+		<members>ResidentialLoanApplication.Override_date_error</members>
+		<members>ResidentialLoanApplication.ReviewDateError</members>
+		<name>ValidationRule</name>
+	</types>
     <version>58.0</version>
 </Package>
