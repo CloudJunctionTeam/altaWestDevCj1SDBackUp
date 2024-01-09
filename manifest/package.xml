@@ -23,6 +23,8 @@
         <members>Conditions_AutoLaunched_Sys_Logic_Assessment</members>
         <members>Conditions_Trigger_Mortgage_Sys_Logic_Reassessment</members>
         <members>Loan_Applicants_Actions</members>
+        <members>Conditions_Update_Task_Comments</members>
+
         <members>Create_Compliance_Records</members>
 
         <name>Flow</name>
