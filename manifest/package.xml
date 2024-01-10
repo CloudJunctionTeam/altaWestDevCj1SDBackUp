@@ -95,6 +95,8 @@
 	</types>
 	<types>
 		<members>ComplianceRecord__mdt</members>
+        <members>Conditions_Admission_Criterion__mdt</members>
+        <members>Conditions_Admission_Mapping__mdt</members>
 		<members>Compliance_Notifications__mdt</members>
 		<members>Compliance__c</members>
 		<name>CustomObject</name>
@@ -120,9 +122,7 @@
         <members>Conditions_Trigger_Mortgage_Sys_Logic_Reassessment</members>
         <members>Loan_Applicants_Actions</members>
         <members>Conditions_Update_Task_Comments</members>
-
         <members>Create_Compliance_Records</members>
-
         <members>Client_Risk_Assessment_Flow</members>
 		<members>Contact_Update_Actions</members>
 		<members>On_Compliance_Update</members>
@@ -133,12 +133,18 @@
         <members>DeepCloneRLA_Test</members>
         <name>ApexClass</name>
     </types>
+	<types>
+        <members>Residential_Loan_Application_Record_Page2</members>
+        <name>FlexiPage</name>
+    </types>
     <types>
 		<members>ComplianceRecord__mdt-Compliance Record Layout</members>
 		<members>Compliance_Notifications__mdt-Compliance Notification Layout</members>
 		<members>Compliance__c-CRA Page Layout</members>
 		<members>Compliance__c-Compliance Layout</members>
 		<members>Compliance__c-TC Page Layout</members>
+		<members>ResidentialLoanApplication-MJ Lendesk Pagelayout %28Custom%29</members>
+		<members>ResidentialLoanApplication-MJ Newton Pagelayout %28Custom%29</members>
 		<name>Layout</name>
 	</types>
 	<types>
@@ -155,11 +161,6 @@
 		<members>Compliance__c.Client_Risk_Assessment</members>
 		<members>Compliance__c.Transaction_checklist</members>
 		<name>RecordType</name>
-	</types>
-	<types>
-		<members>SiteSamples</members>
-        <members>SNA_Customers1_sf_default_cdn_3KDsK</members>
-		<name>StaticResource</name>
 	</types>
 	<types>
 		<members>Account.age_cannot_be_less_than_18</members>
