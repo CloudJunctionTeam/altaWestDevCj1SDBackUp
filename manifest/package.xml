@@ -213,6 +213,75 @@
         <members>ComplianceRecord.TC_010</members>
         <members>Compliance_Notifications.EDD_01</members>
         <members>Compliance_Notifications.UTR_01</members>
+        <members>Conditions_Admission_Criterion.Any_debt_items_to_pay_off</members>
+        <members>Conditions_Admission_Criterion.Any_debt_items_to_pay_off2</members>
+        <members>Conditions_Admission_Criterion.Any_debt_items_to_pay_off3</members>
+        <members>Conditions_Admission_Criterion.If_Income_source_includes_CPP_or_OAS</members>
+        <members>Conditions_Admission_Criterion.If_Income_source_includes_Child_Support</members>
+        <members>Conditions_Admission_Criterion.If_Income_source_includes_Contract_Incom</members>
+        <members>Conditions_Admission_Criterion.If_Income_source_includes_ISP_Income</members>
+        <members>Conditions_Admission_Criterion.If_Income_source_includes_Investment_Inc</members>
+        <members>Conditions_Admission_Criterion.If_Income_source_includes_Rental</members>
+        <members>Conditions_Admission_Criterion.If_Income_source_includes_Spousal_Suppor</members>
+        <members>Conditions_Admission_Criterion.If_LTV_65</members>
+        <members>Conditions_Admission_Criterion.If_LTV_75</members>
+        <members>Conditions_Admission_Criterion.If_Payment_type_is_Hourly</members>
+        <members>Conditions_Admission_Criterion.If_any_properties_are_condos</members>
+        <members>Conditions_Admission_Criterion.If_any_properties_are_condos2</members>
+        <members>Conditions_Admission_Criterion.If_any_properties_are_condos_then_inclu</members>
+        <members>Conditions_Admission_Criterion.If_any_properties_in_AB</members>
+        <members>Conditions_Admission_Criterion.If_any_properties_in_BC</members>
+        <members>Conditions_Admission_Criterion.If_any_properties_in_BC2</members>
+        <members>Conditions_Admission_Criterion.If_any_properties_in_BC_or_ON</members>
+        <members>Conditions_Admission_Criterion.If_any_property_has_encumbrance_0</members>
+        <members>Conditions_Admission_Criterion.If_any_property_is_classified_as_a_comm2</members>
+        <members>Conditions_Admission_Criterion.If_any_property_is_classified_as_a_comme</members>
+        <members>Conditions_Admission_Criterion.If_any_property_is_marked_owner_occupied</members>
+        <members>Conditions_Admission_Criterion.If_commitment_fee_0_then_include</members>
+        <members>Conditions_Admission_Criterion.If_funded_before_July_2020</members>
+        <members>Conditions_Admission_Criterion.If_internal_reserve_fee_0_then_includ</members>
+        <members>Conditions_Admission_Criterion.If_lending_application_is_for_a_purchas2</members>
+        <members>Conditions_Admission_Criterion.If_lending_application_is_for_a_purchas3</members>
+        <members>Conditions_Admission_Criterion.If_lending_application_is_for_a_purchase</members>
+        <members>Conditions_Admission_Criterion.If_loan_is_75_LTV</members>
+        <members>Conditions_Admission_Criterion.If_loan_is_75_LTV2</members>
+        <members>Conditions_Admission_Criterion.If_position_is_second_then_include</members>
+        <members>Conditions_Admission_Criterion.If_position_is_second_then_include2</members>
+        <members>Conditions_Admission_Criterion.If_product_is_Flex</members>
+        <members>Conditions_Admission_Mapping.Borrower_Income_Declaration_Part_A</members>
+        <members>Conditions_Admission_Mapping.Clear_Estoppel_Certificate</members>
+        <members>Conditions_Admission_Mapping.Collateral_charge</members>
+        <members>Conditions_Admission_Mapping.Commitment_Fee</members>
+        <members>Conditions_Admission_Mapping.Condo_Docs</members>
+        <members>Conditions_Admission_Mapping.Condo_Insurance_Broker</members>
+        <members>Conditions_Admission_Mapping.Condo_Insurance_Solicitor</members>
+        <members>Conditions_Admission_Mapping.Debts_to_be_paid_from_Trust</members>
+        <members>Conditions_Admission_Mapping.Debts_to_be_paid_prior_to_funding</members>
+        <members>Conditions_Admission_Mapping.ESA_Phase_1</members>
+        <members>Conditions_Admission_Mapping.Existing_mortgage_statements</members>
+        <members>Conditions_Admission_Mapping.Form_B_Required</members>
+        <members>Conditions_Admission_Mapping.Income_Verification_CPP_or_OAS</members>
+        <members>Conditions_Admission_Mapping.Income_Verification_Child_Support</members>
+        <members>Conditions_Admission_Mapping.Income_Verification_Contract_Income</members>
+        <members>Conditions_Admission_Mapping.Income_Verification_Disability_or_WCB</members>
+        <members>Conditions_Admission_Mapping.Income_Verification_Hourly</members>
+        <members>Conditions_Admission_Mapping.Income_Verification_Incorporated</members>
+        <members>Conditions_Admission_Mapping.Income_Verification_Investment_Income</members>
+        <members>Conditions_Admission_Mapping.Income_Verification_Part_Time_Hourly</members>
+        <members>Conditions_Admission_Mapping.Income_Verification_RSP_Income</members>
+        <members>Conditions_Admission_Mapping.Income_Verification_Rental</members>
+        <members>Conditions_Admission_Mapping.Income_Verification_Salaried</members>
+        <members>Conditions_Admission_Mapping.Income_Verification_Spousal_Support</members>
+        <members>Conditions_Admission_Mapping.Interest_Reserve_Payment_Length</members>
+        <members>Conditions_Admission_Mapping.MLS_Listing</members>
+        <members>Conditions_Admission_Mapping.Must_Fund_By</members>
+        <members>Conditions_Admission_Mapping.Notice_to_1st_Mortgagee</members>
+        <members>Conditions_Admission_Mapping.Offer_to_Purchase</members>
+        <members>Conditions_Admission_Mapping.Proof_of_Income</members>
+        <members>Conditions_Admission_Mapping.Rent_Roll</members>
+        <members>Conditions_Admission_Mapping.Statutory_Declaration</members>
+        <members>Conditions_Admission_Mapping.Verification_of_Downpayment</members>
+        <members>Conditions_Admission_Mapping.X2nd_mortgage_priority</members>
         <name>CustomMetadata</name>
     </types>
     <types>
@@ -297,5 +366,5 @@
         <members>ResidentialLoanApplication.ReviewDateError</members>
         <name>ValidationRule</name>
     </types>
-    <version>58.0</version>
+    <version>60.0</version>
 </Package>

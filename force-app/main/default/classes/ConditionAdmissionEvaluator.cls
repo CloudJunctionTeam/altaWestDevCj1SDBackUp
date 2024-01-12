@@ -10,13 +10,16 @@ public without sharing class ConditionAdmissionEvaluator {
 
     // List or Set Declarations
     List<Id> listOfIds;
+    List<Id> listOfRlaIds;
     List<sObject> recordsList;
     Set<String> conditionsSubjectsSet;
+    
 
     // Map Declarations
     Map<Id, List<Conditions_Admission_Criterion__mdt>> mappingToCriteriaMap;
     Map<Id, Conditions_Admission_Mapping__mdt> mappingMap;
     Map<String, Task> mappingAndRecordTaskMap;
+
 
     // Begin Execution of invokable method for Condition Criteria Evaluation
     @InvocableMethod(label='Invoke Condition Evaluation' description='Pass List of Ids of records and Condition Evaluation')
@@ -30,6 +33,7 @@ public without sharing class ConditionAdmissionEvaluator {
 
         // Retrieve and validate object api name 
         evaluator.listOfIds = listOfIds;
+        System.debug(listOfIds[0]);
         evaluator.objectApiName = String.valueOf(listOfIds[0].getsobjecttype());
         if(evaluator.objectApiName == null || evaluator.objectApiName.length() == 0) {
             throw new InvalidObjectApiNameException('ConditionAdmissionEvaluator.invokeConditionAdmissionEvaluator: Unable to parse Object Api Name for which conditions have to be evaluated');
@@ -37,25 +41,26 @@ public without sharing class ConditionAdmissionEvaluator {
 
         // Create Condition Admission Criteria Map and return comma separated list of fields
         String commaSepFieldList = evaluator.getConditionAdmissionList();
-
         if(commaSepFieldList == '') {
             return new List<String>();
         }
         System.debug(commaSepFieldList);
 
-        // Get Records
+        // Query records with the fields received in the commSepFieldList String
         evaluator.getObjectRecords(commaSepFieldList);
         if(evaluator.recordsList.size() == 0 || evaluator.recordsList == null) {
             return new List<String>();
         }
+        System.debug(evaluator.recordsList);
 
-        // Get Tasks
+        // Query Tasks and form the mappingAndRecordTaskMap
         evaluator.createTasksMap();
         if(evaluator.mappingAndRecordTaskMap == null || evaluator.mappingAndRecordTaskMap.size() == 0) {
             return new List<String>();
         }
 
         // Evaluate Conditions Criteria
+        System.debug('Criteria Evaluation Start');
         List<Task> taskUpdateList = evaluator.beginConditionCriteriaEval();
         If(taskUpdateList == null || taskUpdateList.size() == 0) {
             return new List<String>();
@@ -141,8 +146,7 @@ public without sharing class ConditionAdmissionEvaluator {
         String query = 
         'SELECT ' + String.escapeSingleQuotes(commaSepFieldList) 
             + ' FROM ' +  String.escapeSingleQuotes(this.objectApiName) 
-            + ' WHERE ' +  String.escapeSingleQuotes(this.relationshipFieldName)
-            + ' IN :listOfIds';
+            + ' WHERE Id IN :listOfIds';
         System.debug(query);
         try {
         	this.recordsList = Database.query(query);
@@ -151,12 +155,26 @@ public without sharing class ConditionAdmissionEvaluator {
                                                     + this.objectApiName + 
                                                     ' have incorrect values for RLA Relationship Field Api Name or Field Api Names.');
         }
+        if(this.objectApiName != 'ResidentialLoanApplication') {
+            listOfRlaIds = new List<Id>();
+            for(SObject rec: this.recordsList) {
+                listOfRlaIds.add(String.valueOf(rec.get(relationshipFieldName)));
+            }
+        }
     }
 
     void createTasksMap() {
+        List<Id> taskWhatIdList;
+        if(this.objectApiName != 'ResidentialLoanApplication') {
+        	taskWhatIdList = listOfRlaIds;
+        } else {
+            taskWhatIdList = listOfIds;
+        }
+        
+        
         
         String query = 
-            'SELECT Id, Subject, WhatId FROM Task WHERE WhatId IN :listOfIds AND Subject IN :conditionsSubjectsSet';
+            'SELECT Id, Subject, WhatId FROM Task WHERE WhatId IN :taskWhatIdList AND Subject IN :conditionsSubjectsSet';
         System.debug(query);
         List<Task> taskList;
         try{
@@ -189,6 +207,279 @@ public without sharing class ConditionAdmissionEvaluator {
         //       // Handle NULL correctly in Value
         //     Add Task List Entry
         // return Task List
-        return new List<Task>();
+
+        List<Task> tasksToUpdate = new List<Task>();
+        for(Id mappingId:mappingMap.keyset()) {
+            String boolOperator = mappingMap.get(mappingId).Boolean_Logic__c;
+            for(sObject objectRecord: this.recordsList) {
+                Boolean value;
+                for(Conditions_Admission_Criterion__mdt criterion: mappingToCriteriaMap.get(mappingId)) {
+                    if(value == null) {
+                        value = this.evaluate(objectRecord.get(criterion.Field_Api_Name__c), getFieldType(criterion.Field_Api_Name__c), criterion.Operator__c, criterion.Value__c);
+                    } else if(boolOperator == 'AND') {
+                        value = value && this.evaluate(objectRecord.get(criterion.Field_Api_Name__c), getFieldType(criterion.Field_Api_Name__c), criterion.Operator__c, criterion.Value__c);
+                    } else if(boolOperator == 'OR') {
+                        value = value || this.evaluate(objectRecord.get(criterion.Field_Api_Name__c), getFieldType(criterion.Field_Api_Name__c), criterion.Operator__c, criterion.Value__c);
+                    }
+                    System.debug('field api name:'+getFieldType(criterion.Field_Api_Name__c));
+
+                    System.debug('Value:'+value);
+               }
+                String valueToBeSet;
+                if(value == true) {
+					valueToBeSet = mappingMap.get(mappingId).Field_Truthy_Update_Value__c;                    
+                } else {
+                    valueToBeSet = mappingMap.get(mappingId).Field_Falsy_Update_Value__c;
+                }
+                
+                Task t = new Task();
+                t.put('Id',mappingAndRecordTaskMap.get(objectRecord.get(relationshipFieldName) +  mappingMap.get(mappingId).MasterLabel).Id);
+                t.put(mappingMap.get(mappingId).Field_To_Update_Api_Name__c, valueToBeSet);
+                tasksToUpdate.add(t);
+                
+            }
+        }
+        return tasksToUpdate;
+    }
+
+    Boolean evaluate(Object operator, String operatorType, String operation, String operand) {
+        operatorType = operatorType.toUpperCase();
+        
+        System.debug('##Operator:'+operator+'##type:'+operatorType+'##operation:'+operation+'##operand'+operand);
+        
+        if(operatorType == 'STRING' || operatorType == 'PHONE' || operatorType == 'EMAIL' 
+            || operatorType == 'PICKLIST' || operatorType == 'ENCRYPTEDSTRING' || operatorType == 'REFERENCE'
+            || operatorType == 'TEXTAREA' || operatorType == 'URL' || operatorType == 'COMBOBOX'
+            || operatorType == 'ID'
+            ) {
+                String castedOperator;
+                String castedOperand;
+                if(operator == null) {
+                	castedOperator = '';
+                } else {
+                    castedOperator = String.valueOf(operator);
+                }
+                
+                if(operand == null) {
+                	castedOperand  ='';
+                } else {
+                    castedOperand = String.valueOf(operand);
+                }
+                
+                switch on operation {
+                    when 'Equal To' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not Equal To' {
+                        return castedOperator != castedOperand;
+                    }
+                    when 'Greater Than' {
+                        return castedOperator.compareTo(castedOperand) > 0;
+                    }
+                    when 'Greater Than Equal To' {
+                        return castedOperator.compareTo(castedOperand) >= 0;
+                    }
+                    when 'Lesser Than' {
+                        return castedOperator.compareTo(castedOperand) < 0;
+                    }
+                    when 'Lesser Than Equal To' {
+                        return castedOperator.compareTo(castedOperand) <= 0;
+                    }
+                    when 'Contains' {
+                        return castedOperator.contains(castedOperand);
+                    }
+                    when 'Not Contains' {
+                        return !castedOperator.contains(castedOperand);
+                    }
+                    when 'In' {
+                        return castedOperand.contains(castedOperator);
+                    }
+                    when 'Not In' {
+                        return !castedOperand.contains(castedOperator);
+                    }
+                    when else {
+                        return null;
+                    }
+                }
+            } else if(operatorType == 'BOOLEAN') {
+                Boolean castedOperator = Boolean.valueOf(operator);
+                Boolean castedOperand = Boolean.valueOf(operand.deleteWhitespace().toLowerCase());
+
+                switch on operation {
+                    when 'Equal To' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not Equal To' {
+                        return castedOperator != castedOperand;
+                    }
+                    when 'Greater Than' {
+                        return castedOperator != castedOperand;
+                    }
+                    when 'Greater Than Equal To' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Lesser Than' {
+                        return castedOperator != castedOperand;
+                    }
+                    when 'Lesser Than Equal To' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Contains' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not Contains' {
+                        return castedOperator != castedOperand;
+                    }
+                    when 'In' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not In' {
+                        return castedOperator != castedOperand;
+                    }
+                    when else {
+                        return null;
+                    }
+                }
+            }else if(operatorType == 'DOUBLE' || operatorType == 'CURRENCY' || operatorType == 'PERCENT') {
+                if(operator == null || operand == null) return false;
+                
+                Double castedOperator = Double.valueOf(String.valueOf(operator).deleteWhitespace());
+                Double castedOperand = Double.valueOf(operand.deleteWhitespace());
+
+                switch on operation {
+                    when 'Equal To' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not Equal To' {
+                        return castedOperator != castedOperand;
+                    }
+                    when 'Greater Than' {
+                        return castedOperator > castedOperand;
+                    }
+                    when 'Greater Than Equal To' {
+                        return castedOperator >= castedOperand;
+                    }
+                    when 'Lesser Than' {
+                        return castedOperator < castedOperand;
+                    }
+                    when 'Lesser Than Equal To' {
+                        return castedOperator <= castedOperand;
+                    }
+                    when 'Contains' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not Contains' {
+                        return castedOperator != castedOperand;
+                    }
+                    when 'In' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not In' {
+                        return castedOperator != castedOperand;
+                    }
+                    when else {
+                        return null;
+                    }
+                }
+                } else if(operatorType == 'INTEGER' || operatorType == 'LONG') {
+                
+                if(operator == null || operand == null) return false;
+
+                Long castedOperator = Long.valueOf(String.valueOf(operator).deleteWhitespace());
+                Long castedOperand = Long.valueOf(operand.deleteWhitespace());
+
+                switch on operation {
+                    when 'Equal To' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not Equal To' {
+                        return castedOperator != castedOperand;
+                    }
+                    when 'Greater Than' {
+                        return castedOperator > castedOperand;
+                    }
+                    when 'Greater Than Equal To' {
+                        return castedOperator >= castedOperand;
+                    }
+                    when 'Lesser Than' {
+                        return castedOperator < castedOperand;
+                    }
+                    when 'Lesser Than Equal To' {
+                        return castedOperator <= castedOperand;
+                    }
+                    when 'Contains' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not Contains' {
+                        return castedOperator != castedOperand;
+                    }
+                    when 'In' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not In' {
+                        return castedOperator != castedOperand;
+                    }
+                    when else {
+                        return null;
+                    }
+                }
+
+            } else if(operatorType == 'DATE' || operatorType == 'DATETIME') {
+                if(operator == null || operand == null) return false;
+
+                DateTime castedOperator;
+                DateTime castedOperand;
+                if(operatorType == 'DATE') {
+                    castedOperator = DateTime.parse(String.valueOf(operator).deleteWhitespace().toLowerCase()+'00:00:00.000Z');
+                	castedOperand = DateTime.parse(String.valueOf(operand).deleteWhitespace().toLowerCase()+'00:00:00.000Z');
+                } else {
+                	
+                    castedOperator = DateTime.parse(String.valueOf(operator).deleteWhitespace().toLowerCase());
+                	castedOperand = DateTime.parse(String.valueOf(operand).deleteWhitespace().toLowerCase());
+                }
+
+                switch on operation {
+                    when 'Equal To' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not Equal To' {
+                        return castedOperator != castedOperand;
+                    }
+                    when 'Greater Than' {
+                        return castedOperator > castedOperand;
+                    }
+                    when 'Greater Than Equal To' {
+                        return castedOperator >= castedOperand;
+                    }
+                    when 'Lesser Than' {
+                        return castedOperator < castedOperand;
+                    }
+                    when 'Lesser Than Equal To' {
+                        return castedOperator <= castedOperand;
+                    }
+                    when 'Contains' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not Contains' {
+                        return castedOperator != castedOperand;
+                    }
+                    when 'In' {
+                        return castedOperator == castedOperand;
+                    }
+                    when 'Not In' {
+                        return castedOperator != castedOperand;
+                    }
+                    when else {
+                        return null;
+                    }
+                }
+            }
+            return false;
+        }
+
+    String getFieldType(String fieldName) {
+        SObjectType r = ((SObject)(Type.forName('Schema.'+objectApiName).newInstance())).getSObjectType();
+        DescribeSObjectResult d = r.getDescribe();
+        return String.valueOf(d.fields.getMap().get(fieldName).getDescribe().getType());
     }
 }
