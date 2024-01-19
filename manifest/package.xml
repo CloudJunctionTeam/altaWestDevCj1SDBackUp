@@ -3,6 +3,7 @@
     <types>
         <members>ConditionAdmissionEvaluator</members>
         <members>ConditionAdmissionEvaluatorTest</members>
+        <members>ConditionAdmissionEvaluatorUtil</members>
         <members>DeepCloneRLA</members>
         <members>DeepCloneRLA_Test</members>
         <name>ApexClass</name>
@@ -228,14 +229,20 @@
         <members>Conditions_Admission_Criterion.If_Payment_type_is_Hourly</members>
         <members>Conditions_Admission_Criterion.If_any_properties_are_condos</members>
         <members>Conditions_Admission_Criterion.If_any_properties_are_condos2</members>
+        <members>Conditions_Admission_Criterion.If_any_properties_are_condos3</members>
+        <members>Conditions_Admission_Criterion.If_any_properties_are_condos4</members>
         <members>Conditions_Admission_Criterion.If_any_properties_are_condos_then_inclu</members>
         <members>Conditions_Admission_Criterion.If_any_properties_in_AB</members>
         <members>Conditions_Admission_Criterion.If_any_properties_in_BC</members>
         <members>Conditions_Admission_Criterion.If_any_properties_in_BC2</members>
+        <members>Conditions_Admission_Criterion.If_any_properties_in_BC3</members>
         <members>Conditions_Admission_Criterion.If_any_properties_in_BC_or_ON</members>
+        <members>Conditions_Admission_Criterion.If_any_properties_in_ON</members>
         <members>Conditions_Admission_Criterion.If_any_property_has_encumbrance_0</members>
         <members>Conditions_Admission_Criterion.If_any_property_is_classified_as_a_comm2</members>
         <members>Conditions_Admission_Criterion.If_any_property_is_classified_as_a_comme</members>
+        <members>Conditions_Admission_Criterion.If_any_property_is_marked_owner_occupie2</members>
+        <members>Conditions_Admission_Criterion.If_any_property_is_marked_owner_occupie3</members>
         <members>Conditions_Admission_Criterion.If_any_property_is_marked_owner_occupied</members>
         <members>Conditions_Admission_Criterion.If_commitment_fee_0_then_include</members>
         <members>Conditions_Admission_Criterion.If_funded_before_July_2020</members>
@@ -247,8 +254,11 @@
         <members>Conditions_Admission_Criterion.If_loan_is_75_LTV2</members>
         <members>Conditions_Admission_Criterion.If_position_is_second_then_include</members>
         <members>Conditions_Admission_Criterion.If_position_is_second_then_include2</members>
+        <members>Conditions_Admission_Criterion.If_position_is_second_then_include3</members>
+        <members>Conditions_Admission_Criterion.If_product_is_Express_then_include1</members>
         <members>Conditions_Admission_Criterion.If_product_is_Flex</members>
         <members>Conditions_Admission_Mapping.Borrower_Income_Declaration_Part_A</members>
+        <members>Conditions_Admission_Mapping.Borrower_Income_Declaration_Part_A_and</members>
         <members>Conditions_Admission_Mapping.Clear_Estoppel_Certificate</members>
         <members>Conditions_Admission_Mapping.Collateral_charge</members>
         <members>Conditions_Admission_Mapping.Commitment_Fee</members>
@@ -280,6 +290,7 @@
         <members>Conditions_Admission_Mapping.Proof_of_Income</members>
         <members>Conditions_Admission_Mapping.Rent_Roll</members>
         <members>Conditions_Admission_Mapping.Statutory_Declaration</members>
+        <members>Conditions_Admission_Mapping.Title_Insurance_to_Contain_Mortgage_Prio</members>
         <members>Conditions_Admission_Mapping.Verification_of_Downpayment</members>
         <members>Conditions_Admission_Mapping.X2nd_mortgage_priority</members>
         <name>CustomMetadata</name>

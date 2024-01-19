@@ -722,8 +722,8 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Check_If_Primary_applicant_exist</name>
-        <label>Check If Primary applicant exist</label>
+        <name>Check_If_Primary_Rxist</name>
+        <label>Check If Primary exist</label>
         <locationX>828</locationX>
         <locationY>755</locationY>
         <defaultConnector>
@@ -731,7 +731,7 @@
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Primary_doesnt_exists</name>
+            <name>Primary_Doesnt_Exist</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>Get_Primary_Applicant</leftValueReference>
@@ -741,9 +741,9 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Primary_Applicant_Error</targetReference>
+                <targetReference>Primary_Applicant_doesnt_exist</targetReference>
             </connector>
-            <label>Primary doesnt exists</label>
+            <label>Primary Doesnt Exist</label>
         </rules>
     </decisions>
     <decisions>
@@ -822,6 +822,9 @@
         <label>Check Action</label>
         <locationX>1855</locationX>
         <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>update_the_pending_approved_cancellation_date</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>If_Stage_Changed_to_Approve</name>
@@ -848,7 +851,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Check_If_Primary_applicant_exist</targetReference>
+                <targetReference>Check_If_Primary_Rxist</targetReference>
             </connector>
             <label>If Stage Changed to Approve</label>
         </rules>
@@ -1214,7 +1217,7 @@
         <expression>{!$Record.Name} &amp; &apos; - Please Fill in the UTR&apos;</expression>
     </formulas>
     <interviewLabel>Create Compliance Records {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Create Compliance Records</label>
+    <label>[RLA] - On Update After Actions</label>
     <loops>
         <name>Check_All_Applicants</name>
         <label>Check All Applicants</label>
@@ -1577,6 +1580,30 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Update_Approval_Date</name>
+        <label>Update Approval Date</label>
+        <locationX>2882</locationX>
+        <locationY>863</locationY>
+        <connector>
+            <targetReference>update_commitment_letter_date</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Stage__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Approved</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Approved_Date_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>update_aproved_notifcation_status</name>
         <label>update aproved notifcation status</label>
         <locationX>1870</locationX>
@@ -1585,6 +1612,27 @@
             <field>Approved_Notification_Sent__c</field>
             <value>
                 <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>update_commitment_letter_date</name>
+        <label>update commitment letter date</label>
+        <locationX>2882</locationX>
+        <locationY>971</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Commitment_Letter_Sent__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Commitment_Date_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -1684,6 +1732,37 @@
             <field>Overall_Suspiciousness_Text__c</field>
             <value>
                 <stringValue>Yes</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>update_the_pending_approved_cancellation_date</name>
+        <label>update the pending approved / cancellation date</label>
+        <locationX>2882</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Update_Approval_Date</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Stage__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending Approval</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Canceled</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Approval_Cancellation_date_time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>

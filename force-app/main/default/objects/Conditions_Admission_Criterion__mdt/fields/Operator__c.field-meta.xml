@@ -50,6 +50,16 @@
                 <default>false</default>
                 <label>Not Contains</label>
             </value>
+            <value>
+                <fullName>In</fullName>
+                <default>false</default>
+                <label>In</label>
+            </value>
+            <value>
+                <fullName>Not In</fullName>
+                <default>false</default>
+                <label>Not In</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

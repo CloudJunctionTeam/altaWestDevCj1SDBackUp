@@ -218,7 +218,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Province</name>
-            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9) AND 10</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.PersonMailingState</leftValueReference>
                 <operator>IsNull</operator>
@@ -244,7 +244,7 @@
                 <leftValueReference>$Record.PersonMailingState</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Yukon</stringValue>
+                    <stringValue>Yukon Territories</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -280,6 +280,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Manitoba</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PersonMailingCity</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -371,9 +378,9 @@
             </conditions>
             <conditions>
                 <leftValueReference>$Record.PersonMailingState</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>IsChanged</operator>
                 <rightValue>
-                    <elementReference>$Record__Prior.PersonMailingState</elementReference>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -591,7 +598,7 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>occupationPoints</name>
         <dataType>String</dataType>

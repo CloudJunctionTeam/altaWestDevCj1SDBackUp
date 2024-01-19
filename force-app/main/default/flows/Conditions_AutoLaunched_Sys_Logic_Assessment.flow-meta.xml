@@ -1962,7 +1962,7 @@
             <targetReference>Get_RLA_Records</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <variables>
         <name>ApplicantEmploymentSubject_1</name>
         <dataType>String</dataType>

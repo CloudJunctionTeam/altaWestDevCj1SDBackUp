@@ -25,7 +25,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>primary_error</targetReference>
+                <targetReference>Primary_Error</targetReference>
             </connector>
             <label>primary_exist</label>
         </rules>

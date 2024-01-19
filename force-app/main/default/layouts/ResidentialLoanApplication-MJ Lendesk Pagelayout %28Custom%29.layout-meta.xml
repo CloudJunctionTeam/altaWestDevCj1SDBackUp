@@ -248,6 +248,10 @@
                 <behavior>Edit</behavior>
                 <field>CJA_Mortgage__Embed_Broker_into_Lender_Fees__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>lending_Application_Type__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
@@ -282,10 +286,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Blended_LTV__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>lending_Application_Type__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -456,7 +456,7 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>ResidentialLoanApplication.Send_Open_Conditions</actionName>
+            <actionName>ResidentialLoanApplication.Send_Open_Conditions_Notification</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
         </platformActionListItems>
@@ -647,6 +647,9 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Fund__c</fields>
+        <fields>Fund_Fee_Percentage__c</fields>
+        <fields>Discounted_Rate__c</fields>
         <relatedList>FundedBy__c.Residential_Loan_Application__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -666,7 +669,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hG1000000HpCb</masterLabel>
+        <masterLabel>00hG1000000KiHp</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

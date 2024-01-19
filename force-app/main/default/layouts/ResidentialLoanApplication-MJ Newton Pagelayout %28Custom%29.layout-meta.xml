@@ -65,6 +65,10 @@
                 <behavior>Edit</behavior>
                 <field>EDD_notes__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>lending_Application_Type__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -181,7 +185,7 @@
                 <field>Broker_BDO__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Contact__c</field>
             </layoutItems>
             <layoutItems>
@@ -584,6 +588,9 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Fund__c</fields>
+        <fields>Fund_Fee_Percentage__c</fields>
+        <fields>Discounted_Rate__c</fields>
         <relatedList>FundedBy__c.Residential_Loan_Application__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -599,11 +606,15 @@
         <fields>TASK.LAST_UPDATE</fields>
         <relatedList>Activity.Residential_Loan_Application__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Commission_Statement__c.Residential_Loan_Application__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hG1000000HpAz</masterLabel>
+        <masterLabel>00hG1000000KiHq</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

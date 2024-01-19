@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>Operator__c</field>
-        <value xsi:type="xsd:string">Contains</value>
+        <value xsi:type="xsd:string">Equal To</value>
     </values>
     <values>
         <field>Value__c</field>

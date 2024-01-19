@@ -40,7 +40,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <subflows>
         <name>Call_Conditions_AutoLaunched_Sys_Logic_Reassessment</name>
         <label>Call Conditions [AutoLaunched] - Sys Logic Reassessment</label>

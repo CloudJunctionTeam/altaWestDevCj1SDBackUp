@@ -5,14 +5,14 @@
         <name>AProductLendingApplicationVersionID</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>0PTG10000000XK9OAM</stringValue>
+            <stringValue>0PTG10000000Xs1OAE</stringValue>
         </value>
     </constants>
     <constants>
         <name>AWCLendingApplicationVersionID</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>0PTG10000000XLlOAM</stringValue>
+            <stringValue>0PTG10000000YEbOAM</stringValue>
         </value>
     </constants>
     <decisions>
@@ -79,9 +79,6 @@
         <label>Create A Product Lending Application Action Plan</label>
         <locationX>314</locationX>
         <locationY>431</locationY>
-        <connector>
-            <targetReference>Call_Conditions_AutoLaunched_Sys_Logic_Reassessment</targetReference>
-        </connector>
         <inputAssignments>
             <field>ActionPlanState</field>
             <value>
@@ -126,9 +123,6 @@
         <label>Create AWC Lending Application Action Plan</label>
         <locationX>50</locationX>
         <locationY>431</locationY>
-        <connector>
-            <targetReference>Call_Conditions_AutoLaunched_Sys_Logic_Reassessment</targetReference>
-        </connector>
         <inputAssignments>
             <field>ActionPlanState</field>
             <value>
@@ -187,25 +181,6 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
-    <subflows>
-        <name>Call_Conditions_AutoLaunched_Sys_Logic_Reassessment</name>
-        <label>Call Conditions [AutoLaunched] - Sys Logic Reassessment</label>
-        <locationX>314</locationX>
-        <locationY>623</locationY>
-        <flowName>Conditions_AutoLaunched_Sys_Logic_Assessment</flowName>
-        <inputAssignments>
-            <name>ObjectedUpdated</name>
-            <value>
-                <elementReference>ObjectUpdated</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <name>RLA_ID</name>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-    </subflows>
     <variables>
         <name>ObjectUpdated</name>
         <dataType>String</dataType>

@@ -30,6 +30,16 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>hideHeader</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListQuickLinksContainer</componentName>
+                <identifier>force_relatedListQuickLinksContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>buttonLabel</name>
                     <value>Mark as Current Stage</value>
                 </componentInstanceProperties>
@@ -68,7 +78,6 @@
                 <identifier>c_pathLWC</identifier>
             </componentInstance>
         </itemInstances>
-        <mode>Replace</mode>
         <name>header</name>
         <type>Region</type>
     </flexiPageRegions>
@@ -83,8 +92,17 @@
                 <identifier>runtime_industries_lending_svLAB</identifier>
             </componentInstance>
         </itemInstances>
-        <mode>Replace</mode>
         <name>summaryViewContent</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>force:detailPanel</componentName>
+                <identifier>force_detailPanel</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-10pfzf266qsh</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -174,85 +192,10 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>TC Checklist</value>
+                    <value>Transaction Monitoring Checklist</value>
                 </componentInstanceProperties>
                 <componentName>dynamicRelatedListCompliance</componentName>
                 <identifier>c_dynamicRelatedListCompliance2</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Is_Approved__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>actionNames</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>New</value>
-                        </valueListItems>
-                    </valueList>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>adminFilters</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>RECORDTYPE|EQUALS|[&quot;Transaction_checklist&quot;]</value>
-                        </valueListItems>
-                    </valueList>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>maxRecordsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>ResidentialLoanApplication.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>Compliances__r</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListDisplayType</name>
-                    <value>ADVGRID</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListFieldAliases</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>NAME</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Question__c</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Answer__c</value>
-                        </valueListItems>
-                    </valueList>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListLabel</name>
-                    <value>Transaction Checklist</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>sortFieldAlias</name>
-                    <value>__DEFAULT__</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>sortFieldOrder</name>
-                    <value>Default</value>
-                </componentInstanceProperties>
-                <componentName>lst:dynamicRelatedList</componentName>
-                <identifier>lst_dynamicRelatedList</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Is_Approved__c}</leftValue>
@@ -350,109 +293,10 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>CRA</value>
+                    <value>Client Risk Assessment</value>
                 </componentInstanceProperties>
                 <componentName>dynamicRelatedListCompliance</componentName>
                 <identifier>c_dynamicRelatedListCompliance3</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Is_Approved__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>actionNames</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>MassChangeOwner</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>New</value>
-                        </valueListItems>
-                    </valueList>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>adminFilters</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>RECORDTYPE|EQUALS|[&quot;Client_Risk_Assessment&quot;]</value>
-                        </valueListItems>
-                    </valueList>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>maxRecordsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>ResidentialLoanApplication.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>Compliances__r</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListDisplayType</name>
-                    <value>ADVGRID</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListFieldAliases</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>NAME</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Question__c</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Rating__c</value>
-                        </valueListItems>
-                    </valueList>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListLabel</name>
-                    <value>Client Risk Rating</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>sortFieldAlias</name>
-                    <value>__DEFAULT__</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>sortFieldOrder</name>
-                    <value>Default</value>
-                </componentInstanceProperties>
-                <componentName>lst:dynamicRelatedList</componentName>
-                <identifier>lst_dynamicRelatedList2</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Is_Approved__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>decorate</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); font-size: 16px;&quot;&gt;2- &lt;/strong&gt;&lt;strong style=&quot;color: rgb(116, 116, 116); font-size: 16px;&quot;&gt;Single High Risk Factors&lt;/strong&gt;&lt;/p&gt;</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText6</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Is_Approved__c}</leftValue>
@@ -525,83 +369,6 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>ResidentialLoanApplication.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>ProcessSteps</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>ResidentialLoanApplication.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>Histories</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer3</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>decorate</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>richTextValue</name>
-                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;This section will be available once the application is approved&lt;/strong&gt;&lt;/p&gt;</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText2</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Is_Approved__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>false</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-17bea4d9-66bf-4769-9a0c-29d645da8160</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
                     <name>controllingapiname</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -613,14 +380,15 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>filter</name>
+                    <value>Condition_Type__c = &apos;Alta West&apos;</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>listoffields</name>
-                    <value>Subject,Description,System_Logic__c,Logic_Override__c,Showing__c</value>
+                    <value>Condition_Type__c,Subject,Description,System_Logic__c,Logic_Override__c,Showing__c,Status__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>nooffieldperrow</name>
-                    <value>5</value>
+                    <value>7</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectapiName1</name>
@@ -642,10 +410,216 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Conditions</value>
+                    <value>Alta West Conditions</value>
                 </componentInstanceProperties>
                 <componentName>dynamicRelatedListCompliance</componentName>
                 <identifier>c_dynamicRelatedListCompliance</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>controllingapiname</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>dependentapiname</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>enableadddel</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>filter</name>
+                    <value>Condition_Type__c = &apos;Broker&apos;</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>listoffields</name>
+                    <value>Condition_Type__c,Subject,Description,System_Logic__c,Logic_Override__c,Showing__c,Status__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>nooffieldperrow</name>
+                    <value>7</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectapiName1</name>
+                    <value>Task</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>readonlyfieldslist1</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedlisticon</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedparentapiname</name>
+                    <value>WhatId</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>requiredfieldslist1</name>
+                    <value>Subject,Description</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Broker Conditions</value>
+                </componentInstanceProperties>
+                <componentName>dynamicRelatedListCompliance</componentName>
+                <identifier>c_dynamicRelatedListCompliance4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>controllingapiname</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>dependentapiname</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>enableadddel</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>filter</name>
+                    <value>Condition_Type__c = &apos;Solicitor&apos;</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>listoffields</name>
+                    <value>Condition_Type__c,Subject,Description,System_Logic__c,Logic_Override__c,Showing__c,Status__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>nooffieldperrow</name>
+                    <value>7</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectapiName1</name>
+                    <value>Task</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>readonlyfieldslist1</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedlisticon</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedparentapiname</name>
+                    <value>WhatId</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>requiredfieldslist1</name>
+                    <value>Subject,Description</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Solicitor Conditions</value>
+                </componentInstanceProperties>
+                <componentName>dynamicRelatedListCompliance</componentName>
+                <identifier>c_dynamicRelatedListCompliance5</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>controllingapiname</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>dependentapiname</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>enableadddel</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>filter</name>
+                    <value>Showing__c = TRUE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>listoffields</name>
+                    <value>Condition_Type__c,Subject,Description,System_Logic__c,Logic_Override__c,Showing__c,Status__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>nooffieldperrow</name>
+                    <value>7</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectapiName1</name>
+                    <value>Task</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>readonlyfieldslist1</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedlisticon</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedparentapiname</name>
+                    <value>WhatId</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>requiredfieldslist1</name>
+                    <value>Subject,Description</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Conditions Showing</value>
+                </componentInstanceProperties>
+                <componentName>dynamicRelatedListCompliance</componentName>
+                <identifier>c_dynamicRelatedListCompliance6</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>controllingapiname</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>dependentapiname</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>enableadddel</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>filter</name>
+                    <value>Showing__c = FALSE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>listoffields</name>
+                    <value>Condition_Type__c,Subject,Description,System_Logic__c,Logic_Override__c,Showing__c,Status__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>nooffieldperrow</name>
+                    <value>7</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectapiName1</name>
+                    <value>Task</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>readonlyfieldslist1</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedlisticon</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedparentapiname</name>
+                    <value>WhatId</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>requiredfieldslist1</name>
+                    <value>Subject,Description</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Conditions Not Showing</value>
+                </componentInstanceProperties>
+                <componentName>dynamicRelatedListCompliance</componentName>
+                <identifier>c_dynamicRelatedListCompliance7</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>runtime_industries_actionplan:listCard</componentName>
+                <identifier>runtime_industries_actionplan_listCard</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-7e895075-55d8-4c47-9752-6a1e596be4a4</name>
@@ -655,168 +629,6 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListContainer</componentName>
-                <identifier>force_relatedListContainer</identifier>
-            </componentInstance>
-        </itemInstances>
-        <mode>Replace</mode>
-        <name>relatedTabContent</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>summaryViewContent</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Standard.Tab.summary</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>summaryViewTab</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-77d737b3-91e8-44f6-bce0-e86de46ef1d6</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Compliance</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-8fab580a-70f2-4e98-8023-90574b7ab6a2</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Files</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab6</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-17bea4d9-66bf-4769-9a0c-29d645da8160</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Auditing</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab7</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-7e895075-55d8-4c47-9752-6a1e596be4a4</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Conditions</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>relatedTabContent</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Standard.Tab.relatedLists</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>relatedListsTab</identifier>
-            </componentInstance>
-        </itemInstances>
-        <mode>Replace</mode>
-        <name>maintabs</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>tabs</name>
-                    <value>maintabs</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tabset</componentName>
-                <identifier>flexipage_tabset</identifier>
-            </componentInstance>
-        </itemInstances>
-        <mode>Replace</mode>
-        <name>main</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>showLegacyActivityComposer</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>runtime_sales_activities:activityPanel</componentName>
-                <identifier>runtime_sales_activities_activityPanel</identifier>
-            </componentInstance>
-        </itemInstances>
-        <mode>Replace</mode>
-        <name>activityTabContent</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>force:detailPanel</componentName>
-                <identifier>force_detailPanel</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-l3x2z6vngi</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>showLegacyActivityComposer</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>runtime_sales_activities:activityPanel</componentName>
-                <identifier>runtime_sales_activities_activityPanel2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
                     <name>allowFileUpload</name>
                     <value>false</value>
                 </componentInstanceProperties>
@@ -834,126 +646,6 @@
                 <componentInstanceProperties>
                     <name>doDownloadAfterGenerate</name>
                     <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadDocxAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadFromPreview</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doShowPreviewAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigIds</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigTranslationDataSource</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>flowName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>localeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>numCurrLocaleField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packButtonAction</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfig</name>
-                    <value>a3oG10000000KZpIAM</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfigs</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packName</name>
-                    <value>Generate Funding Package (Sign off/Funding)</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packPdfActionType</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>recordId</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showAlternative</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showCsvProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showDocxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showFileSelector</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showNumCurrLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPdfProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPreviewToolbar</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showXslxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>subtitle</name>
-                    <value>Funding Package Generation</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>targetTypeOverwrite</name>
-                    <value>DEFAULT</value>
-                </componentInstanceProperties>
-                <componentName>cadmus_core:LC_ConvertComponent</componentName>
-                <identifier>cadmus_core_LC_ConvertComponent2</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Stage__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Instructed</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>allowFileUpload</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>alternativeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>deliveryTypeOverwrite</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayType</name>
-                    <value>TABLE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>doDownloadDocxAfterGenerate</name>
@@ -1073,133 +765,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadDocxAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadFromPreview</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doShowPreviewAfterGenerate</name>
                     <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigIds</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigTranslationDataSource</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>flowName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>localeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>numCurrLocaleField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packButtonAction</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfig</name>
-                    <value>a3oG10000000KbRIAU</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfigs</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packName</name>
-                    <value>Generate Funding Package (Invoice TP)</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packPdfActionType</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>recordId</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showAlternative</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showCsvProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showDocxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showFileSelector</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showNumCurrLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPdfProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPreviewToolbar</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showXslxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>subtitle</name>
-                    <value>Funding Package Generation</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>targetTypeOverwrite</name>
-                    <value>DEFAULT</value>
-                </componentInstanceProperties>
-                <componentName>cadmus_core:LC_ConvertComponent</componentName>
-                <identifier>cadmus_core_LC_ConvertComponent6</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 AND 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Stage__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Instructed</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Total_Third_Party_Fee__c}</leftValue>
-                        <operator>GT</operator>
-                        <rightValue>0</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>allowFileUpload</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>alternativeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>deliveryTypeOverwrite</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayType</name>
-                    <value>TABLE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>doDownloadDocxAfterGenerate</name>
@@ -1359,136 +925,6 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>packDocConfig</name>
-                    <value>a3oG10000000KhtIAE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfigs</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packName</name>
-                    <value>Generate Instructions Package (AC2/3)</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packPdfActionType</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>recordId</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showAlternative</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showCsvProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showDocxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showFileSelector</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showNumCurrLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPdfProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPreviewToolbar</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showXslxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>subtitle</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>targetTypeOverwrite</name>
-                    <value>DEFAULT</value>
-                </componentInstanceProperties>
-                <componentName>cadmus_core:LC_ConvertComponent</componentName>
-                <identifier>cadmus_core_LC_ConvertComponent8</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Stage__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Fulfillment</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Deal_Province__c}</leftValue>
-                        <operator>CONTAINS</operator>
-                        <rightValue>BC</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Deal_Province__c}</leftValue>
-                        <operator>CONTAINS</operator>
-                        <rightValue>ON</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>allowFileUpload</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>alternativeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>deliveryTypeOverwrite</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayType</name>
-                    <value>TABLE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadDocxAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadFromPreview</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doShowPreviewAfterGenerate</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigIds</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigTranslationDataSource</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>flowName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>localeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>numCurrLocaleField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packButtonAction</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfig</name>
                     <value>a3oG10000000KjVIAU</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -1585,132 +1021,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadDocxAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadFromPreview</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doShowPreviewAfterGenerate</name>
                     <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigIds</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigTranslationDataSource</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>flowName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>localeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>numCurrLocaleField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packButtonAction</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfig</name>
-                    <value>a3oG10000000Kl7IAE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfigs</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packName</name>
-                    <value>Generate Instructions Package (AC1)</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packPdfActionType</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>recordId</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showAlternative</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showCsvProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showDocxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showFileSelector</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showNumCurrLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPdfProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPreviewToolbar</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showXslxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>subtitle</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>targetTypeOverwrite</name>
-                    <value>DEFAULT</value>
-                </componentInstanceProperties>
-                <componentName>cadmus_core:LC_ConvertComponent</componentName>
-                <identifier>cadmus_core_LC_ConvertComponent10</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 AND 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Stage__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Fulfillment</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Deal_Province__c}</leftValue>
-                        <operator>CONTAINS</operator>
-                        <rightValue>AB</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>allowFileUpload</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>alternativeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>deliveryTypeOverwrite</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayType</name>
-                    <value>TABLE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>doDownloadDocxAfterGenerate</name>
@@ -1835,131 +1146,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadDocxAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadFromPreview</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doShowPreviewAfterGenerate</name>
                     <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigIds</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigTranslationDataSource</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>flowName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>localeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>numCurrLocaleField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packButtonAction</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfig</name>
-                    <value>a3oG10000000KoLIAU</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfigs</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packName</name>
-                    <value>Generate Commitment &amp; Disclosure (C&amp;D)</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packPdfActionType</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>recordId</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showAlternative</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showCsvProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showDocxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showFileSelector</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showNumCurrLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPdfProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPreviewToolbar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showXslxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>subtitle</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>targetTypeOverwrite</name>
-                    <value>DEFAULT</value>
-                </componentInstanceProperties>
-                <componentName>cadmus_core:LC_ConvertComponent</componentName>
-                <identifier>cadmus_core_LC_ConvertComponent12</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 AND 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Stage__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Approved</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.White_Label__r.LastName}</leftValue>
-                        <operator>EQUAL</operator>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>allowFileUpload</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>alternativeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>deliveryTypeOverwrite</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayType</name>
-                    <value>TABLE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>doDownloadDocxAfterGenerate</name>
@@ -2083,131 +1270,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadDocxAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadFromPreview</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doShowPreviewAfterGenerate</name>
                     <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigIds</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigTranslationDataSource</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>flowName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>localeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>numCurrLocaleField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packButtonAction</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfig</name>
-                    <value>a3oG10000000KpxIAE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfigs</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packName</name>
-                    <value>Generate Commitment &amp; Disclosure (C&amp;D WL )</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packPdfActionType</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>recordId</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showAlternative</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showCsvProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showDocxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showFileSelector</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showNumCurrLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPdfProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPreviewToolbar</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showXslxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>subtitle</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>targetTypeOverwrite</name>
-                    <value>DEFAULT</value>
-                </componentInstanceProperties>
-                <componentName>cadmus_core:LC_ConvertComponent</componentName>
-                <identifier>cadmus_core_LC_ConvertComponent13</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 AND 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Stage__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Approved</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.White_Label__r.LastName}</leftValue>
-                        <operator>NE</operator>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>allowFileUpload</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>alternativeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>deliveryTypeOverwrite</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayType</name>
-                    <value>TABLE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>doDownloadDocxAfterGenerate</name>
@@ -2365,119 +1428,6 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>packDocConfig</name>
-                    <value>a3oG10000000KRlIAM</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfigs</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packName</name>
-                    <value>Generate Inspections, ID misc</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packPdfActionType</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>recordId</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showAlternative</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showCsvProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showDocxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showFileSelector</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showNumCurrLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPdfProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPreviewToolbar</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showXslxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>subtitle</name>
-                    <value>Inspections, ID misc</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>targetTypeOverwrite</name>
-                    <value>DEFAULT</value>
-                </componentInstanceProperties>
-                <componentName>cadmus_core:LC_ConvertComponent</componentName>
-                <identifier>cadmus_core_LC_ConvertComponent4</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>allowFileUpload</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>alternativeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>deliveryTypeOverwrite</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayType</name>
-                    <value>TABLE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadDocxAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadFromPreview</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doShowPreviewAfterGenerate</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigIds</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigTranslationDataSource</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>flowName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>localeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>numCurrLocaleField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packButtonAction</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfig</name>
                     <value>a3oG10000000KunIAE</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -2537,90 +1487,280 @@
                 <identifier>cadmus_core_LC_ConvertComponent3</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-951133fe-3fe4-4d83-a574-31b07ff79572</name>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>showLegacyActivityComposer</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>runtime_sales_activities:activityPanel</componentName>
+                <identifier>runtime_sales_activities_activityPanel2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-502e2eaf-2854-4919-afa5-ea27fb633c51</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>active</name>
-                    <value>false</value>
+                    <name>showLegacyActivityComposer</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>runtime_sales_activities:activityPanel</componentName>
+                <identifier>runtime_sales_activities_activityPanel</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-3b24b22a-8478-485f-a637-7129ee184b15</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>ResidentialLoanApplication.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>body</name>
-                    <value>activityTabContent</value>
+                    <name>relatedListApiName</name>
+                    <value>ProcessSteps</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Standard.Tab.activity</value>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
                 </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>activityTab</identifier>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>active</name>
+                    <name>parentFieldApiName</name>
+                    <value>ResidentialLoanApplication.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Histories</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;This section will be available once the application is approved&lt;/strong&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText2</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Is_Approved__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-17bea4d9-66bf-4769-9a0c-29d645da8160</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListContainer</componentName>
+                <identifier>force_relatedListContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>relatedTabContent</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-l3x2z6vngi</value>
+                    <value>summaryViewContent</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Standard.Tab.summary</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>summaryViewTab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-10pfzf266qsh</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
                     <value>Standard.Tab.detail</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab3</identifier>
+                <identifier>flexipage_tab8</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-951133fe-3fe4-4d83-a574-31b07ff79572</value>
+                    <value>Facet-77d737b3-91e8-44f6-bce0-e86de46ef1d6</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>PDF Butler</value>
+                    <value>Compliance</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab4</identifier>
+                <identifier>flexipage_tab2</identifier>
             </componentInstance>
         </itemInstances>
-        <mode>Replace</mode>
-        <name>sidebartabs</name>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-8fab580a-70f2-4e98-8023-90574b7ab6a2</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Files</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab6</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-7e895075-55d8-4c47-9752-6a1e596be4a4</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Conditions</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-502e2eaf-2854-4919-afa5-ea27fb633c51</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>PDF Generation</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab9</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-3b24b22a-8478-485f-a637-7129ee184b15</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Standard.Tab.activity</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab5</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-17bea4d9-66bf-4769-9a0c-29d645da8160</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Auditing</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab7</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>relatedTabContent</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Standard.Tab.relatedLists</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>relatedListsTab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>maintabs</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>runtime_industries_actionplan:listCard</componentName>
-                <identifier>runtime_industries_actionplan_listCard</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
-                    <value>sidebartabs</value>
+                    <value>maintabs</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
-                <identifier>flexipage_tabset2</identifier>
+                <identifier>flexipage_tabset</identifier>
             </componentInstance>
         </itemInstances>
-        <mode>Replace</mode>
-        <name>sidebar</name>
+        <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>Residential Loan Application Record Page</masterLabel>
-    <parentFlexiPage>runtime_industries_lending__ResidentialLoanApplication_rec_L</parentFlexiPage>
     <sobjectType>ResidentialLoanApplication</sobjectType>
     <template>
-        <name>flexipage:recordHomeTemplateDesktop</name>
+        <name>flexipage:recordHomeSingleColTemplateDesktop</name>
     </template>
     <type>RecordPage</type>
 </FlexiPage>

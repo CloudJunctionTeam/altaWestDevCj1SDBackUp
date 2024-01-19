@@ -7,6 +7,10 @@
         <value xsi:type="xsd:string">AND</value>
     </values>
     <values>
+        <field>Child_Criteria_Reducer__c</field>
+        <value xsi:type="xsd:string">ANY</value>
+    </values>
+    <values>
         <field>Field_Falsy_Update_Value__c</field>
         <value xsi:type="xsd:string">Omitted</value>
     </values>
@@ -25,5 +29,9 @@
     <values>
         <field>RLA_Relationship_Field_Api_Name__c</field>
         <value xsi:type="xsd:string">LoanApplicationId</value>
+    </values>
+    <values>
+        <field>Task_Subject__c</field>
+        <value xsi:type="xsd:string">Condo Insurance (Solicitor)</value>
     </values>
 </CustomMetadata>
